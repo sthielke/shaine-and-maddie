@@ -66,7 +66,7 @@ app.delete('/api/product/:id', apiController.delete);
 app.use(passportConfig.ensureAuthenticated);
 
 //======= Set up server =======//
-port = 8000;
+port = 80;
 app.listen(port, function(){
     console.log(port + " million dollars")
 })
