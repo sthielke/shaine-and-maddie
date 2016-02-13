@@ -1,0 +1,86 @@
+[
+	{
+        "price": 30, 
+        "id": "Wine in Italy", 
+        "imageUrl": "img/gifts/wine.jpg",  
+        "description": "Purchase a bottle of Italian wine."
+    },
+    {
+    	"price": 90, 
+        "id": "Air BNB in England", 
+        "imageUrl": "img/gifts/airbnbengland.jpg",  
+        "description": "Purchase a stay in an Air BNB for the newlyweds." 
+    },
+    {
+    	"price": 120, 
+        "id": "Day Trip to Assisi", 
+        "imageUrl": "img/gifts/assisidaytrip.jpg",  
+        "description": "Purchase a day trip to Assisi."
+    },
+    {
+    	"price": 130, 
+        "id": "Tour of Big Ben", 
+        "imageUrl": "img/gifts/big.ben.jpg",  
+        "description": "A tour of historic Big Ben and the Parliament building"
+    },
+    {
+    	"price": 40, 
+        "id": "Colosseum Tour", 
+        "imageUrl": "img/gifts/colosseum.tour.jpg",  
+        "description": "A tour of the Colosseum in Rome."
+    },
+    {
+    	"price": 80, 
+        "id": "Dinner in Italy", 
+        "imageUrl": "img/gifts/dinner.italy.jpg",  
+        "description": "Buy the couple a fancy dinner in Italy."
+    },
+    {
+    	"price": 200, 
+        "id": "Hotel in Bellagio, Italy", 
+        "imageUrl": "img/gifts/hotel.bellagio.jpg",  
+        "description": "A beautiful hotel stay in Bellagio, Italy."
+    },
+    {
+    	"price": 100, 
+        "id": "Dinner in London", 
+        "imageUrl": "img/gifts/london.dinner.jpg",  
+        "description": "A fancy pants meal in London."
+    },
+    {
+    	"price": 250, 
+        "id": "Rental Car in Italy", 
+        "imageUrl": "img/gifts/rental.car.jpg",  
+        "description": "Rent the couple a car with which to Roam around Italy"
+    },
+    {
+    	"price": 60, 
+        "id": "Sailing on Lake Como", 
+        "imageUrl": "img/gifts/sailing.lake.como.jpg",  
+        "description": "A day sailing on Lake Como!"
+    },
+    {
+    	"price": 15, 
+        "id": "The David", 
+        "imageUrl": "img/gifts/the.david.jpg",  
+        "description": "Pay for a tour of The David statue in Florence, Italy"
+    },
+    {
+    	"price": 75, 
+        "id": "Train to Bellagio, Italy", 
+        "imageUrl": "img/gifts/train.bellagio.jpg",  
+        "description": "Purchase a train ride for the couple from Milan to Bellagio, Italy."
+    },
+    {
+    	"price": 120, 
+        "id": "Vesari Tour", 
+        "imageUrl": "img/gifts/vasari.tour.jpg",  
+        "description": "Pay for the couple to tour the famous Medici tunnel, also known as the Vesari Corridor."
+    },
+    {
+    	"price": 50, 
+        "id": "Vineyard Tour", 
+        "imageUrl": "img/gifts/vineyard.jpg",  
+        "description": "A tour of a beautiful vineyard in Italy."
+    }
+]
