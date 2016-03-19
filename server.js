@@ -4,6 +4,9 @@
 
 
 //======== Require dependencies from package.json ========//
+var fs = require('fs');
+var http = require('http');
+var https = require('https');
 var express = require('express');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
@@ -12,9 +15,24 @@ var cookieParser = require('cookie-parser');
 var flash = require('connect-flash');
 var passport = require('passport');
 var passportConfig = require('./config/passport.js');
-var app        = express();
+
+
+
+//======== SSL certification files ==========================//
+
+var options = {
+    key: fs.readFileSync('certs/server/my-server.key.pem'),
+    cert: fs.readFileSync('certs/server/maddieandshaine.com.crt')
+    // key: fs.readFileSync('key.pem'),
+    // cert: fs.readFileSync('cert.pem')
+};
+
+//========== create service ================================//
+
+var app = express();
 
 //======== Connect and name your database in mongodb =========//
+
 mongoose.connect('mongodb://localhost/registry');
 
 //======== requiring api contrtoller ========//
@@ -66,10 +84,17 @@ app.delete('/api/product/:id', apiController.delete);
 app.use(passportConfig.ensureAuthenticated);
 
 //======= Set up server =======//
-port = 80;
-app.listen(port, function(){
-    console.log(port + " million dollars")
-})
+
+
+
+
+http.createServer(app).listen(8080, function(){
+    console.log('port 8080')
+});
+
+https.createServer(options, app).listen(8000, function () {
+    console.log('Started!');
+});
 
 // on your terminal under your root of the project, run node server.js
 // or npm install -g nodemon. Then run nodemon server.js, and that restarts the server whenever anything is changed

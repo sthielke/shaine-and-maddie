@@ -1,8 +1,8 @@
 {
   "version": "0.0.0",
   "private": true,
-  "name": "angular-phonecat",
-  "description": "A tutorial application for AngularJS",
+  "name": "maddie-and-shaine",
+  "description": "A wedding registry",
   "repository": "https://github.com/angular/angular-phonecat",
   "license": "MIT",
   "devDependencies": {
@@ -36,7 +36,10 @@
     "cookie-parser": "^1.4.1",
     "express": "^4.13.4",
     "express-session": "^1.13.0",
+    "fs": "0.0.2",
     "google-maps": "^3.1.0",
+    "http": "0.0.0",
+    "https": "^1.0.0",
     "mongoose": "^4.4.1",
     "passport": "^0.3.2",
     "passport-local": "^1.0.0"
