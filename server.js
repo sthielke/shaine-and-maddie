@@ -23,9 +23,10 @@ var passportConfig = require('./config/passport.js');
 var options = {
     key: fs.readFileSync('my-server.key.pem', 'utf8'),
     cert: fs.readFileSync('cert.pem'),
-    ca: [fs.readFileSync('maddieandshaine.com1.crt', 'utf8'),
-         fs.readFileSync('maddieandshaine.com2.crt', 'utf8'),
-         fs.readFileSync('maddieandshaine.com3.crt', 'utf8')]
+    ca: [fs.readFileSync('intermediate.crt'),
+         fs.readFileSync('maddieandshaine.com1.crt'),
+         fs.readFileSync('maddieandshaine.com2.crt'),
+         fs.readFileSync('maddieandshaine.com3.crt')]
     };
 
 //========== create service ================================//
@@ -92,7 +93,7 @@ http.createServer(app).listen(8000, function(){
     console.log('port 8080')
 });
 
-https.createServer(options, app).listen(80, function(){
+https.createServer(options, app).listen(8080, function(){
    console.log('damnit pat'); 
 });
 
