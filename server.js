@@ -93,9 +93,9 @@ http.createServer(app).listen(80, function(){
     console.log('port 8080')
 });
 
-https.createServer(options, app).listen(443, function(){
-   console.log('damnit pat'); 
-});
+// https.createServer(options, app).listen(443, function(){
+//    console.log('damnit pat'); 
+// });
 
 
 // on your terminal under your root of the project, run node server.js
