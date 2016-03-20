@@ -22,12 +22,11 @@ var passportConfig = require('./config/passport.js');
 
 var options = {
     key: fs.readFileSync('my-server.key.pem', 'utf8'),
-    // cert: fs.readFileSync('cert.pem'),
-    cert: [fs.readFileSync('intermediate.crt', 'utf8'),
-         fs.readFileSync('maddieandshaine.com1.crt', 'utf8'),
+    cert: fs.readFileSync('cert.pem'),
+    ca: [fs.readFileSync('maddieandshaine.com1.crt', 'utf8'),
          fs.readFileSync('maddieandshaine.com2.crt', 'utf8'),
          fs.readFileSync('maddieandshaine.com3.crt', 'utf8')]
-};
+    };
 
 //========== create service ================================//
 
@@ -93,9 +92,10 @@ http.createServer(app).listen(8000, function(){
     console.log('port 8080')
 });
 
-https.createServer(options, app).listen(443, function () {
-    console.log('Started!');
+https.createServer(options, app).listen(443, function(){
+   console.log('damnit pat'); 
 });
+
 
 // on your terminal under your root of the project, run node server.js
 // or npm install -g nodemon. Then run nodemon server.js, and that restarts the server whenever anything is changed
