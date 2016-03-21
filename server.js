@@ -22,9 +22,8 @@ var passportConfig = require('./config/passport.js');
 
 var options = {
     key: fs.readFileSync('my-server.key.pem').toString(),
-    cert: fs.readFileSync('cert.pem').toString(),
-    ca: [fs.readFileSync('intermediate.crt').toString(),
-         fs.readFileSync('maddieandshaine.com1.crt').toString(),
+    cert: fs.readFileSync('intermediate.crt').toString(),
+    ca: [fs.readFileSync('maddieandshaine.com1.crt').toString(),
          fs.readFileSync('maddieandshaine.com2.crt').toString(),
          fs.readFileSync('maddieandshaine.com3.crt').toString()]
     };
