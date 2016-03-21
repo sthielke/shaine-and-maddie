@@ -21,11 +21,11 @@ var passportConfig = require('./config/passport.js');
 //======== SSL certification files ==========================//
 
 var options = {
-    key: fs.readFileSync('my-server.key.pem').toString(),
-    cert: fs.readFileSync('intermediate.crt').toString(),
-    ca: [fs.readFileSync('maddieandshaine.com1.crt').toString(),
-         fs.readFileSync('maddieandshaine.com2.crt').toString(),
-         fs.readFileSync('maddieandshaine.com3.crt').toString()]
+    key: fs.readFileSync('my-server.key.pem', 'utf8').toString(),
+    cert: fs.readFileSync('maddieandshaine.com.crt', 'utf8').toString(),
+    ca: [fs.readFileSync('maddieandshaine.com1.crt', 'utf8').toString(),
+         fs.readFileSync('maddieandshaine.com2.crt', 'utf8').toString(),
+         fs.readFileSync('maddieandshaine.com3.crt', 'utf8').toString()]
     };
 
 //========== create service ================================//
@@ -88,9 +88,9 @@ app.use(passportConfig.ensureAuthenticated);
 
 
 
-// http.createServer(app).listen(80, function(){
-//     console.log('port 8080')
-// });
+http.createServer(app).listen(80, function(){
+    console.log('port 8080')
+});
 
 https.createServer(options, app).listen(443, function(){
    console.log('damnit pat'); 
