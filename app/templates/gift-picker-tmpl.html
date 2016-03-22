@@ -1,13 +1,18 @@
-<div class="hero">
-  <br>
-      <p> <strong>Maddie and Shaine</strong></p>
-      <h2>Wedding Registry</h2>
-</div>
-  
+<div class="logo">
+  <img class="img-responsive center-block" src="../img/gifts/Title.png">
+<div>
+<div>
+  <!--<ul class="nav nav-tabs">-->
+    <!--<li role="presentation">HOME</li>-->
+    <!--<li role="presentation">EVENT DETAILS</li>-->
+    <!--<li role="presentation">REGISTRY</li>-->
+    <!--<li role="presentation">CONTACT US</li>-->
+  <!--</ul>-->
+<!--</div>-->
 
 
-  <nav class="navbar navbar-default navbar-fixed-top">
-  <div class="container-fluid">
+  <nav class="navbar navbar-default">
+  <div class="container-fluid text-center">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -16,36 +21,36 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#/gifts">M&S</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <form class="navbar-form navbar-left" role="search">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search" ng-model="query">
-        </div>
-      </form>
       <ul class="nav navbar-nav">
-        <li>
-          <a><select class="btn btn-default dropdown-toggle" ng-model="orderProp">
-          <option value="id">Alphabetical</option>
-          <option value="price">Price: Low to High</option>
-          <option value="-price">Price: High to Low</option>
-          </select></a>
-        </li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#/song">Song Request</a></li>
-        <li><a href="#/reception">Reception Info</a></li>
-        <li><a href="#/lodging">Lodging</a></li>
-        </li>
+        <li><a href="#/song">HOME</a></li>
+        <li><a href="#/reception">EVENT DETAILS</a></li>
+        <li><a href="#/lodging">REGISTRY</a></li>
+        <li><a href="#/lodging">CONTACT US</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
 
-<form class="submit-form" ng-if="user.password" ng-submit="post()">
+<div>
+ <img class="img-responsive center-block" src="../img/gifts/Photo.png">
+</div>
+
+<div>
+  <img class="img-responsive center-block" src="../img/gifts/Design.png">
+</div>
+<div class="text-center">
+  <h3>Blurbity blurb</h3>
+</div>
+
+<div>
+  <img class="img-responsive center-block" src="../img/gifts/Design2.png">
+</div>
+
+  <form class="submit-form" ng-if="user.password" ng-submit="post()">
   <input placeholder="Price", ng-model="product.price">
   <input placeholder="Id", ng-model="product.id">
   <input placeholder="Image URL", ng-model="product.imageUrl">

@@ -3,20 +3,10 @@
 body {
   background-color: #ebfafa;
 }
-.hero {
- position: relative;
- background: url('../img/gifts/background.jpg') no-repeat center center fixed;
- -webkit-background-size: cover;
- -moz-background-size: cover;
- background-size: cover;
- text-align: center;
- font-size: 65px;
- color: #fff;
- min-height: 750px;
- letter-spacing: 2px;
- font-family: "Montserrat", sans-serif;
 
-
+.navbar-default{
+    background: none;
+    border: none;
 }
 .navbar-brand{
   position: relative;

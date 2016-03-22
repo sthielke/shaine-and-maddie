@@ -86,14 +86,12 @@ app.use(passportConfig.ensureAuthenticated);
 
 //======= Set up server =======//
 
-
-
-// http.createServer(app).listen(80, function(){
-//     console.log('port 8080')
-// });
+http.createServer(app).listen(8080, function(){
+    console.log('port 8080')
+});
 
 https.createServer(options, app).listen(443, function(){
-   console.log('damnit pat'); 
+    console.log('damnit pat');
 });
 
 
