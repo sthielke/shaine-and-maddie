@@ -50,31 +50,31 @@
   <img class="img-responsive center-block" src="../img/gifts/Design2.png">
 </div>
 
-  <form class="submit-form" ng-if="user.password" ng-submit="post()">
-  <input placeholder="Price", ng-model="product.price">
-  <input placeholder="Id", ng-model="product.id">
-  <input placeholder="Image URL", ng-model="product.imageUrl">
-  <input placeholder="Description", ng-model="product.description">
-  <input type="submit">
-</form>
+  <!--<form class="submit-form" ng-if="user.password" ng-submit="post()">-->
+  <!--<input placeholder="Price", ng-model="product.price">-->
+  <!--<input placeholder="Id", ng-model="product.id">-->
+  <!--<input placeholder="Image URL", ng-model="product.imageUrl">-->
+  <!--<input placeholder="Description", ng-model="product.description">-->
+  <!--<input type="submit">-->
+<!--</form>-->
 
-<div class="col-md-offset-2 col-md-8">
-      <!--Body content-->
+<!--<div class="col-md-offset-2 col-md-8">-->
+      <!--&lt;!&ndash;Body content&ndash;&gt;-->
 
-      <ul class="gifts">
-        <li ng-repeat="gift in gifts | filter:query | orderBy:orderProp" class="thumbnail">
-          <a href="#/gifts/{{gift.id}}" class="thumb"><img ng-src="{{gift.imageUrl}}"></a>
-          <a href="#/gifts/{{gift.id}}"><h3>{{gift.id}}</a> ${{gift.price}}</h3>
-          <p>{{gift.description}}</p>
+      <!--<ul class="gifts">-->
+        <!--<li ng-repeat="gift in gifts | filter:query | orderBy:orderProp" class="thumbnail">-->
+          <!--<a href="#/gifts/{{gift.id}}" class="thumb"><img ng-src="{{gift.imageUrl}}"></a>-->
+          <!--<a href="#/gifts/{{gift.id}}"><h3>{{gift.id}}</a> ${{gift.price}}</h3>-->
+          <!--<p>{{gift.description}}</p>-->
 
-          <!--TODO Add Stripe API-->
-          <button type="button" class="btn btn-warning btn-lg">Paypal</button>
-          <button class="logout-button btn btn-primary btn-sm" ng-if="user.password", type="button" ng-click="delete(gift, $index)">Delete Entry</button>
-        </li>
-      </ul>
+          <!--&lt;!&ndash;TODO Add Stripe API&ndash;&gt;-->
+          <!--<button type="button" class="btn btn-warning btn-lg">Paypal</button>-->
+          <!--<button class="logout-button btn btn-primary btn-sm" ng-if="user.password", type="button" ng-click="delete(gift, $index)">Delete Entry</button>-->
+        <!--</li>-->
+      <!--</ul>-->
 
-    </div>
-  </div>
-</div>
+    <!--</div>-->
+  <!--</div>-->
+<!--</div>-->
 
-<button ng-if="user.password" ng-click="logout()">Logout</button>
+<!--<button ng-if="user.password" ng-click="logout()">Logout</button>-->
