@@ -30,7 +30,7 @@ registryControllers.controller('registryCtrl', ['$scope', '$rootScope', '$http',
 
         angular.forEach($scope.gifts, function(response){
             $scope.priceInCents = response.price * 100;
-           console.log(response.priceInCents); 
+           console.log($scope.priceInCents); 
         });
     });
     
