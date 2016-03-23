@@ -4,7 +4,7 @@
 
 var registryControllers = angular.module('registryControllers', []);
 
-registryControllers.controller('homeCtrl', ['$scope', '$rootScope', '$http',
+registryControllers.controller('registryCtrl', ['$scope', '$rootScope', '$http',
   function($scope, $rootScope, $http) {
     $http.get('/userinfo')
         .then(function(response){
@@ -60,7 +60,7 @@ registryControllers.controller('eventDetailsCtrl', ['$scope', '$routeParams',
     $scope.phoneId = $routeParams.phoneId;
   }]);
 
-registryControllers.controller('registryCtrl', ['$scope', 
+registryControllers.controller('homeCtrl', ['$scope', 
   function($scope){
   	$scope.map = data;
 }]);
