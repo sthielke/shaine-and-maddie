@@ -7,6 +7,10 @@ body {
 #squiggles{
     width: 60%;
 }
+
+#description{
+    width: 60%;
+}
 .navbar .navbar-nav {
     display: inline-block;
     float: none;
