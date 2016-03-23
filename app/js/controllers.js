@@ -26,14 +26,14 @@ registryControllers.controller('registryCtrl', ['$scope', '$rootScope', '$http',
 
     $http.get('/api/product').success(function(data) {
         $scope.gifts = data;
-        
-        console.log($scope.gifts.price);
-        // angular.forEach($scope.gifts, function(response){
-        //    console.log(response.price); 
-        // });
+        //console.log(data)
+
+        angular.forEach($scope.gifts, function(response){
+           console.log(response.price); 
+        });
     });
     
-    
+      
 
     $scope.delete = function(gift, index){
         var r = confirm("Are you sure you want to delete this?");
