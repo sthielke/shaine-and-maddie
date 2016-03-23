@@ -26,8 +26,11 @@ registryControllers.controller('registryCtrl', ['$scope', '$rootScope', '$http',
 
     $http.get('/api/product').success(function(data) {
         $scope.gifts = data;
-        //console.log(data)
-        console.log($scope.gifts);
+        
+        console.log($scope.gifts.price);
+        // angular.forEach($scope.gifts, function(response){
+        //    console.log(response.price); 
+        // });
     });
     
     
