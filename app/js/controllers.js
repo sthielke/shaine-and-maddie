@@ -27,9 +27,10 @@ registryControllers.controller('registryCtrl', ['$scope', '$rootScope', '$http',
     $http.get('/api/product').success(function(data) {
         $scope.gifts = data;
         //console.log(data)
+        console.log($scope.gifts);
     });
     
-    console.log($scope.gifts);
+    
 
     $scope.delete = function(gift, index){
         var r = confirm("Are you sure you want to delete this?");
