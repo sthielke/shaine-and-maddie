@@ -4,6 +4,19 @@ body {
   background-color: #ebfafa;
 }
 
+#squiggles{
+    width: 60%;
+}
+.navbar .navbar-nav {
+    display: inline-block;
+    float: none;
+    vertical-align: top;
+}
+
+.navbar .navbar-collapse {
+    text-align: center;
+}
+
 .navbar-default{
     background: none;
     border: none;

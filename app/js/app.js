@@ -4,34 +4,33 @@
 
 var registryApp = angular.module('registryApp', [
   'ngRoute',
-  'registryControllers',
-  'GoogleMapsNative'
+  'registryControllers'
 ]);
 
 registryApp.config(['$routeProvider',
   function($routeProvider) {
     $routeProvider.
-      when('/gifts', {
-        templateUrl: 'templates/gift-picker-tmpl.html',
-        controller: 'giftListCtrl'
+      when('/home', {
+        templateUrl: 'templates/home-tmpl.html',
+        controller: 'homeCtrl'
       }).
       when('/login', {
         templateUrl: 'templates/login.html',
         controller: 'loginController'
       }).
-      when('/song', {
-        templateUrl: 'templates/song-suggestion-tmpl.html',
-        controller: 'suggestSongCtrl'
+      when('/event', {
+        templateUrl: 'templates/event-details-tmpl.html',
+        controller: 'eventDetailsCtrl'
       }).
-      when('/reception',{
-        templateUrl: 'templates/reception-info-tmpl.html',
-        controller: 'receptionInfoCtrl'
+      when('/registry',{
+        templateUrl: 'templates/registry-tmpl.html',
+        controller: 'registryCtrl'
       }).
-      when('/lodging',{
-        templateUrl: 'templates/lodging-info-tmpl.html',
-        controller: 'lodgingCtrl'
+      when('/contact',{
+        templateUrl: 'templates/contact-us-tmpl.html',
+        controller: 'contactUsCtrl'
       }).
       otherwise({
-        redirectTo: '/gifts'
+        redirectTo: '/home'
       });
   }]);
