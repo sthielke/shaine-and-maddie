@@ -35,7 +35,6 @@
       <div>
         <img id="squiggles" class="img-responsive center-block" src="../img/gifts/Design.png">
       </div>
-
       <div class="text-center">
         <form action="" method="POST">
           <script
@@ -47,15 +46,16 @@
                   data-image="/128x128.png"
                   data-locale="auto">
           </script>
+        </form>
 
 
-          <!--<form class="submit-form" ng-if="user.password" ng-submit="post()">-->
-          <!--<input placeholder="Price", ng-model="product.price">-->
-          <!--<input placeholder="Id", ng-model="product.id">-->
-          <!--<input placeholder="Image URL", ng-model="product.imageUrl">-->
-          <!--<input placeholder="Description", ng-model="product.description">-->
-          <!--<input type="submit">-->
-          <!--</form>-->
+          <form class="submit-form" ng-if="user.password" ng-submit="post()">
+          <input placeholder="Price", ng-model="product.price">
+          <input placeholder="Id", ng-model="product.id">
+          <input placeholder="Image URL", ng-model="product.imageUrl">
+          <input placeholder="Description", ng-model="product.description">
+          <input type="submit">
+          </form>
 
           <div class="col-md-offset-2 col-md-8">
           <!--Body content-->
@@ -77,8 +77,6 @@
           </div>
 
           <button ng-if="user.password" ng-click="logout()">Logout</button>
-
-        </form>
       </div>
 
       <div>
