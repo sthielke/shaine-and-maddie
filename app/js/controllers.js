@@ -29,8 +29,7 @@ registryControllers.controller('registryCtrl', ['$scope', '$rootScope', '$http',
         //console.log(data)
     });
     
-    $scope.priceInCents = $scope.gifts.price * 100;  
-      console.log($scope.priceInCents);
+    console.log($scope.gifts);
 
     $scope.delete = function(gift, index){
         var r = confirm("Are you sure you want to delete this?");
