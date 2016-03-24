@@ -48,27 +48,29 @@
     </form>
 
       <!--Body content-->
-<div class="container-fluid">
-      <ul class="gifts">
+
+      <ul class="gifts container-fluid">
         <li ng-repeat="gift in gifts" class="thumbnail" >
       <img class="thumb" ng-src="{{gift.imageUrl}}">
           <h3>{{gift.id}}</a> ${{gift.price}}</h3>
           <p>{{gift.description}}</p>
-            <li><form action="" method="POST">
-          <script
-                  src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-                  data-key="pk_test_1kGfCqltwJC8xEyFDaPLGxn3"
-                  data-amount="{{priceInCents}}"
-                  data-name="{{gift.id}}"
-                  data-description="${{gift.price}}"
-                  data-image="../img/gifts/trees.png"
-                  data-locale="auto">
-          </script>
-      </form></li>
+            <form action="" method="POST">
+                <script
+                        src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                        data-key="pk_test_1kGfCqltwJC8xEyFDaPLGxn3"
+                        data-amount="{{priceInCents}}"
+                        data-name="{{gift.id}}"
+                        data-description="${{gift.price}}"
+                        data-image="../img/gifts/trees.png"
+                        data-locale="auto">
+                </script>
+            </form>
         </li>
       </ul>
 
-    <button class="logout-button btn btn-primary btn-sm" ng-if="user.password" type="button" ng-click="delete(gift, $index)">Delete Entry</button>
+
+
+          <button class="logout-button btn btn-primary btn-sm" ng-if="user.password" type="button" ng-click="delete(gift, $index)">Delete Entry</button>
 
 
     <button ng-if="user.password" ng-click="logout()">Logout</button>
