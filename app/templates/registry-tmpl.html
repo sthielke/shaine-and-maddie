@@ -51,26 +51,25 @@
 <div class="container-fluid">
       <ul class="gifts">
         <li ng-repeat="gift in gifts" class="thumbnail" >
-          <a href="" class="thumb"><img ng-src="{{gift.imageUrl}}"></a>
-          <h3>{{gift.id}}</a> ${{gift.price}}</h3>
-          <p>{{gift.description}}</p>
-
-          <!--TODO Add Stripe API-->
-          <form action="" method="POST">
-            <script
-                    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-                    data-key="pk_test_1kGfCqltwJC8xEyFDaPLGxn3"
-                    data-amount="{{priceInCents}}"
-                    data-name="{{gift.id}}"
-                    data-description="${{gift.price}}"
-                    data-image="../img/gifts/trees.png"
-                    data-locale="auto">
-            </script>
-          </form>
-
-          <button class="logout-button btn btn-primary btn-sm" ng-if="user.password" type="button" ng-click="delete(gift, $index)">Delete Entry</button>
         </li>
       </ul>
+      <img class="thumb" ng-src="{{gift.imageUrl}}">
+          <h3>{{gift.id}}</a> ${{gift.price}}</h3>
+          <p>{{gift.description}}</p>
+            <form action="" method="POST">
+                <script
+                        src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                        data-key="pk_test_1kGfCqltwJC8xEyFDaPLGxn3"
+                        data-amount="{{priceInCents}}"
+                        data-name="{{gift.id}}"
+                        data-description="${{gift.price}}"
+                        data-image="../img/gifts/trees.png"
+                        data-locale="auto">
+                </script>
+            </form>
+
+
+          <button class="logout-button btn btn-primary btn-sm" ng-if="user.password" type="button" ng-click="delete(gift, $index)">Delete Entry</button>
 
 
     <button ng-if="user.password" ng-click="logout()">Logout</button>
