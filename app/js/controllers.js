@@ -58,6 +58,14 @@ registryControllers.controller('registryCtrl', ['$scope', '$rootScope', '$http',
                 $scope.user = response.data
             })
     };
+      
+      $scope.charge = function(gift){
+          
+          $http.post('/api/confirm', gift.priceInCents)
+              .then(function(response){
+                  
+              })
+      };
 
     $scope.orderProp = 'id';
   }]);
@@ -75,7 +83,7 @@ registryControllers.controller('homeCtrl', ['$scope',
 registryControllers.controller('contactUsCtrl', ['$scope', 
   function($scope){
   $scope.lodge = data;
-}])
+}]);
 
 registryControllers.controller('loginController', ['$scope', '$http', '$location',
     function($scope, $http, $location) {
