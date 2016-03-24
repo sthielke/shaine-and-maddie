@@ -62,9 +62,9 @@
 
             <button class="logout-button btn btn-primary btn-sm" ng-if="user.password" type="button" ng-click="delete(gift, $index)">Delete Entry</button>
 
-            <form ng-click="charge(gift)" action="" method="POST">
+            <form action="" method="POST">
                 <script
-                        src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                        src="https://checkout.stripe.com/checkout.js" class="stripe-button" ng-click="charge(gift)"
                         data-key="pk_test_1kGfCqltwJC8xEyFDaPLGxn3"
                         data-amount="{{priceInCents}}"
                         data-name="{{gift.id}}"
