@@ -51,11 +51,11 @@
 <div class="container-fluid">
       <ul class="gifts">
         <li ng-repeat="gift in gifts" class="thumbnail" >
-        </li>
-      </ul>
       <img class="thumb" ng-src="{{gift.imageUrl}}">
           <h3>{{gift.id}}</a> ${{gift.price}}</h3>
           <p>{{gift.description}}</p>
+        </li>
+      </ul>
             <form action="" method="POST">
                 <script
                         src="https://checkout.stripe.com/checkout.js" class="stripe-button"
