@@ -22,6 +22,7 @@
               <li><a href="#/event">EVENT DETAILS</a></li>
               <li><a href="#/registry">REGISTRY</a></li>
               <li><a href="#/contact">CONTACT US</a></li>
+                <li><button ng-if="user.password" ng-click="logout()">Logout</button></li>
             </ul>
           </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
@@ -54,6 +55,9 @@
       <img class="thumb" ng-src="{{gift.imageUrl}}">
           <h3>{{gift.id}}</a> ${{gift.price}}</h3>
           <p>{{gift.description}}</p>
+
+            <button class="logout-button btn btn-primary btn-sm" ng-if="user.password" type="button" ng-click="delete(gift, $index)">Delete Entry</button>
+
             <form action="" method="POST">
                 <script
                         src="https://checkout.stripe.com/checkout.js" class="stripe-button"
@@ -70,10 +74,10 @@
 
 
 
-          <button class="logout-button btn btn-primary btn-sm" ng-if="user.password" type="button" ng-click="delete(gift, $index)">Delete Entry</button>
 
 
-    <button ng-if="user.password" ng-click="logout()">Logout</button>
+
+
 
 </div>
 
