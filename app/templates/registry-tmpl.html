@@ -47,9 +47,8 @@
       <input type="submit">
     </form>
 
-    <div class="col-md-offset-2 col-md-8">
       <!--Body content-->
-
+<div class="well">
       <ul class="gifts">
         <li ng-repeat="gift in gifts | filter:query | orderBy:orderProp" class="thumbnail">
           <a href="#/gifts/{{gift.id}}" class="thumb"><img ng-src="{{gift.imageUrl}}"></a>
@@ -63,7 +62,7 @@
                     data-key="pk_test_1kGfCqltwJC8xEyFDaPLGxn3"
                     data-amount="{{priceInCents}}"
                     data-name="{{gift.id}}"
-                    data-description="2 widgets ($20.00)"
+                    data-description="${{gift.price}}"
                     data-image="../img/gifts/trees.png"
                     data-locale="auto">
             </script>
@@ -73,11 +72,10 @@
         </li>
       </ul>
 
-    </div>
-    </div>
-    </div>
 
     <button ng-if="user.password" ng-click="logout()">Logout</button>
+
+</div>
 
       <div>
         <img id="squiggles" class="img-responsive center-block" src="../img/gifts/Design2.png">
