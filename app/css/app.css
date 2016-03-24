@@ -8,6 +8,10 @@ body {
     width: 60%;
 }
 
+#giftContainer{
+    background: none;
+}
+
 #description{
     width: 60%;
 }
