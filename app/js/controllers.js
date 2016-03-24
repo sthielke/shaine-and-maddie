@@ -60,10 +60,11 @@ registryControllers.controller('registryCtrl', ['$scope', '$rootScope', '$http',
     };
       
       $scope.charge = function(gift){
+          var request = {price: gift.priceInCents, stripeToken: "pk_test_1kGfCqltwJC8xEyFDaPLGxn3"};
           
-          $http.post('/api/confirm', gift.priceInCents)
+          $http.post('/api/confirm', request)
               .then(function(response){
-                  
+                  console.log(response);
               })
       };
 
