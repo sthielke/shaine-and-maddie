@@ -48,10 +48,10 @@
     </form>
 
       <!--Body content-->
-<div class="container">
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
       <ul class="gifts">
-        <li ng-repeat="gift in gifts">
-          <a href="#/gifts/{{gift.id}}" class="thumbnail"><img ng-src="{{gift.imageUrl}}"></a>
+        <li ng-repeat="gift in gifts" class="thumbnail" >
+          <a href="#/gifts/{{gift.id}}" class="thumb"><img ng-src="{{gift.imageUrl}}"></a>
           <a href="#/gifts/{{gift.id}}"><h3>{{gift.id}}</a> ${{gift.price}}</h3>
           <p>{{gift.description}}</p>
 
