@@ -22,7 +22,7 @@
               <li><a href="#/event">EVENT DETAILS</a></li>
               <li><a href="#/registry">REGISTRY</a></li>
               <li><a href="#/contact">CONTACT US</a></li>
-                <li><button ng-if="user.password" ng-click="logout()">Logout</button></li>
+                <li><a href="" ng-if="user.password" ng-click="logout()">Logout</a></li>
             </ul>
           </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
@@ -40,21 +40,25 @@
         <h3 class="text-center"> Yikes! You beat us to the punch… Our registry items will be coming soon! </h3>
       </div>
 
+      <div>
+        <img id="squiggles" class="img-responsive center-block" src="../img/gifts/Design2.png">
+      </div>
+
     <form class="submit-form" ng-if="user.password" ng-submit="post()">
-      <input placeholder="Price", ng-model="product.price">
-      <input placeholder="Id", ng-model="product.id">
-      <input placeholder="Image URL", ng-model="product.imageUrl">
-      <input placeholder="Description", ng-model="product.description">
-      <input type="submit">
+        <input placeholder="Price", ng-model="product.price">
+        <input placeholder="Id", ng-model="product.id">
+        <input placeholder="Image URL", ng-model="product.imageUrl">
+        <input placeholder="Description", ng-model="product.description">
+        <input type="submit">
     </form>
 
-      <!--Body content-->
+    <!--Body content-->
 
-      <ul class="gifts container-fluid">
+    <ul class="gifts container-fluid">
         <li ng-repeat="gift in gifts" class="thumbnail" id="giftContainer">
-      <img class="thumb" ng-src="{{gift.imageUrl}}">
-          <h3>{{gift.id}}</a> ${{gift.price}}</h3>
-          <p>{{gift.description}}</p>
+            <img class="thumb" ng-src="{{gift.imageUrl}}">
+            <h3>{{gift.id}}</a> ${{gift.price}}</h3>
+            <p>{{gift.description}}</p>
 
             <button class="logout-button btn btn-primary btn-sm" ng-if="user.password" type="button" ng-click="delete(gift, $index)">Delete Entry</button>
 
@@ -70,17 +74,4 @@
                 </script>
             </form>
         </li>
-      </ul>
-
-
-
-
-
-
-
-
-</div>
-
-      <div>
-        <img id="squiggles" class="img-responsive center-block" src="../img/gifts/Design2.png">
-      </div>
+    </ul>

@@ -10,6 +10,8 @@ body {
 
 #giftContainer{
     background: none;
+    border-width: thick;
+    border-color: mintcream;
 }
 
 #description{
