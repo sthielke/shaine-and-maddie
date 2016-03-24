@@ -48,10 +48,10 @@
     </form>
 
       <!--Body content-->
-<div class="well">
+<div class="container">
       <ul class="gifts">
-        <li ng-repeat="gift in gifts | filter:query | orderBy:orderProp" class="thumbnail">
-          <a href="#/gifts/{{gift.id}}" class="thumb"><img ng-src="{{gift.imageUrl}}"></a>
+        <li ng-repeat="gift in gifts">
+          <a href="#/gifts/{{gift.id}}" class="thumbnail"><img ng-src="{{gift.imageUrl}}"></a>
           <a href="#/gifts/{{gift.id}}"><h3>{{gift.id}}</a> ${{gift.price}}</h3>
           <p>{{gift.description}}</p>
 
