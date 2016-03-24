@@ -49,9 +49,9 @@
 
       <!--Body content-->
 
-      <ul class="gifts container-fluid">
+      <ul class="gifts container-fluid" id="giftContainer">
         <li ng-repeat="gift in gifts" class="thumbnail" >
-      <img class="thumb" ng-src="{{gift.imageUrl}}">
+      <img class="img-thumbnail" ng-src="{{gift.imageUrl}}">
           <h3>{{gift.id}}</a> ${{gift.price}}</h3>
           <p>{{gift.description}}</p>
             <form action="" method="POST">
