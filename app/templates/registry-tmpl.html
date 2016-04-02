@@ -2,12 +2,6 @@
   <img class="img-responsive center-block" src="../img/gifts/Registry_Title.png">
   </div>
 
-<script type="text/javascript">
-    // This identifies your website in the createToken call below
-    Stripe.setPublishableKey('pk_test_1kGfCqltwJC8xEyFDaPLGxn3');
-    // ...
-</script>
-
 
       <nav class="navbar navbar-default">
         <div class="container-fluid text-center">
@@ -68,12 +62,15 @@
 
             <button class="logout-button btn btn-primary btn-sm" ng-if="user.password" type="button" ng-click="delete(gift, $index)">Delete Entry</button>
 
-            <form stripe-form="stripeCallback" name="checkoutForm">
-                <input ng-model="number" placeholder="Card Number" payments-format="card" payments-validate="card" name="card" />
-                <input ng-model="expiry" placeholder="Expiration" payments-format="expiry" payments-validate="expiry" name="expiry" />
-                <input ng-model="cvc" placeholder="CVC" payments-format="cvc" payments-validate="cvc" name="cvc" />
-                <button type="submit">Submit</button>
-                <div ng-if="checkoutForm.card.$invalid"> Error: invalid card number! </div>
+            <form action="stripeCallback()" method="POST">
+                <script
+                        src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                        data-key="pk_test_1kGfCqltwJC8xEyFDaPLGxn3"
+                        data-amount="2000"
+                        data-name="{{gift.id}}"
+                        data-description="${{gift.price}}"
+                        data-image="../img/gifts/trees.png">
+                </script>
             </form>
         </li>
     </ul>
