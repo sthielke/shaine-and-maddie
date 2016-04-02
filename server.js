@@ -112,20 +112,19 @@ app.use(passportConfig.ensureAuthenticated);
 
 app.post('/charge', function(req, res) {
     var stripeToken = req.body.stripeToken;
-    var amount = 1000;
 
-    stripe.charges.create({
-            card: stripeToken,
-            currency: 'usd',
-            amount: amount
-        },
-        function(err, charge) {
-            if (err) {
-                res.send(500, err);
-            } else {
-                res.send(204);
-            }
-        });
+    var charge = stripe.charges.create({
+        amount: 1000,
+        currency: 'usd',
+        source: stripeToken
+        description: 'example'
+    }, function(err, charge) {
+        if (err && err.type === 'StripeCardError'){
+            console.log(err);
+        } else{
+            res.send(charge);
+        }
+    });
 });
 
 //======= Set up server =======//
