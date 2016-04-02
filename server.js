@@ -112,7 +112,7 @@ app.use(passportConfig.ensureAuthenticated);
 
 app.post('/charge', function(req, res) {
     var stripeToken = req.body.stripeToken;
-    var amount = data-amount;
+    var amount = 1000;
 
     stripe.charges.create({
             card: stripeToken,
@@ -124,7 +124,6 @@ app.post('/charge', function(req, res) {
                 res.send(500, err);
             } else {
                 res.send(204);
-                console.log(charge);
             }
         });
 });
