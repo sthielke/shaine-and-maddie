@@ -59,7 +59,7 @@ registryControllers.controller('registryCtrl', ['$scope', '$rootScope', '$http',
             })
     };
       
-      $scope.charge = function (code, result) {
+      $scope.stripeCallback = function (code, result) {
           console.log(result);
           if (result.error) {
               window.alert('it failed! error: ' + result.error.message);
