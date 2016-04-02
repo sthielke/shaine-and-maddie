@@ -116,7 +116,7 @@ app.post('/charge', function(req, res) {
     var charge = stripe.charges.create({
         amount: 1000,
         currency: 'usd',
-        source: stripeToken
+        source: stripeToken,
         description: 'example'
     }, function(err, charge) {
         if (err && err.type === 'StripeCardError'){
