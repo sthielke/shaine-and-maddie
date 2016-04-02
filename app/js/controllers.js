@@ -59,14 +59,23 @@ registryControllers.controller('registryCtrl', ['$scope', '$rootScope', '$http',
             })
     };
       
-      // $scope.charge = function(gift){
-      //     var request = {price: gift.priceInCents, stripeToken: "pk_test_1kGfCqltwJC8xEyFDaPLGxn3"};
-      //    
-      //     $http.post('/api/confirm', request)
-      //         .then(function(response){
-      //             console.log(response);
-      //         })
-      // };
+      $scope.charge = function (code, result) {
+          console.log(result);
+          if (result.error) {
+              window.alert('it failed! error: ' + result.error.message);
+          } else {
+
+
+              // Simple POST request example (passing data) :
+              $http.post('/charge', result)
+                  .success(function(data, status, headers, config) {
+                      alert(data);
+                  })
+                  .error(function(data, status, headers, config) {
+                      alert(data);
+                  });
+          }
+      };
 
     $scope.orderProp = 'id';
   }]);

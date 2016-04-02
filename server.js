@@ -127,6 +127,7 @@ app.post('/charge', function(req, res){
         if (err && err.type === 'StripeCardError') {
             // The card has been declined
         }
+        res.send("completed payment!");
     });
 });
 
