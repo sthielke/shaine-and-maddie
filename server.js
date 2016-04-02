@@ -119,7 +119,7 @@ app.post('/charge', function(req, res){
     var stripeToken = req.body.stripeToken;
 
     var charge = stripe.charges.create({
-        amount: 1000, // amount in cents
+        amount: 2000, // amount in cents
         currency: "usd",
         source: stripeToken,
         description: "Example charge"
