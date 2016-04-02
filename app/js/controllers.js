@@ -28,11 +28,11 @@ registryControllers.controller('registryCtrl', ['$scope', '$rootScope', '$http',
         $scope.gifts = data;
         //console.log(data)
 
-        angular.forEach($scope.gifts, function(response){
-            $scope.priceInCents = response.price * 100;
-           console.log($scope.priceInCents); 
-        });
-    });
+    //     angular.forEach($scope.gifts, function(response){
+    //         $scope.priceInCents = response.price * 100;
+    //        console.log($scope.priceInCents); 
+    //     });
+    // });
     
       
 
@@ -59,14 +59,14 @@ registryControllers.controller('registryCtrl', ['$scope', '$rootScope', '$http',
             })
     };
       
-      $scope.charge = function(gift){
-          var request = {price: gift.priceInCents, stripeToken: "pk_test_1kGfCqltwJC8xEyFDaPLGxn3"};
-          
-          $http.post('/api/confirm', request)
-              .then(function(response){
-                  console.log(response);
-              })
-      };
+      // $scope.charge = function(gift){
+      //     var request = {price: gift.priceInCents, stripeToken: "pk_test_1kGfCqltwJC8xEyFDaPLGxn3"};
+      //    
+      //     $http.post('/api/confirm', request)
+      //         .then(function(response){
+      //             console.log(response);
+      //         })
+      // };
 
     $scope.orderProp = 'id';
   }]);
