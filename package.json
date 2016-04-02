@@ -31,7 +31,7 @@
   },
   "dependencies": {
     "bcryptjs": "^2.3.0",
-    "body-parser": "^1.14.2",
+    "body-parser": "^1.15.0",
     "connect-flash": "^0.1.1",
     "cookie-parser": "^1.4.1",
     "express": "^4.13.4",
@@ -42,6 +42,7 @@
     "https": "^1.0.0",
     "mongoose": "^4.4.1",
     "passport": "^0.3.2",
-    "passport-local": "^1.0.0"
+    "passport-local": "^1.0.0",
+    "stripe": "^4.5.0"
   }
 }

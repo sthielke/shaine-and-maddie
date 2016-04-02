@@ -88,29 +88,46 @@ app.delete('/api/product/:id', apiController.delete);
 
 app.use(passportConfig.ensureAuthenticated);
 
-app.post('/api/confirm', function(req, res){
-    
-    console.log('some string');
-    
+// app.post('/api/confirm', function(req, res){
+//    
+//     console.log('some string');
+//    
+//     var stripeToken = req.body.stripeToken;
+//
+//     var charge = stripe.charges.create({
+//         amount: req.body.price, // amount in cents, again
+//         currency: "usd",
+//         source: stripeToken,
+//         description: "Example charge"
+//     }, function(err, charge) {
+//         if (err && err.type === 'StripeCardError') {
+//             // The card has been declined
+//             res.send(err);
+//         }else{
+//             res.send(charge);
+//         }
+//     }); 
+//    
+// });
+
+app.post('/charge', function(req, res) {
     var stripeToken = req.body.stripeToken;
+    var amount = data-amount;
 
-    var charge = stripe.charges.create({
-        amount: req.body.price, // amount in cents, again
-        currency: "usd",
-        source: stripeToken,
-        description: "Example charge"
-    }, function(err, charge) {
-        if (err && err.type === 'StripeCardError') {
-            // The card has been declined
-            res.send(err);
-        }else{
-            res.send(charge);
-        }
-    }); 
-    
+    stripe.charges.create({
+            card: stripeToken,
+            currency: 'usd',
+            amount: amount
+        },
+        function(err, charge) {
+            if (err) {
+                res.send(500, err);
+            } else {
+                res.send(204);
+                console.log(charge);
+            }
+        });
 });
-
-
 
 //======= Set up server =======//
 
