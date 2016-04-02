@@ -109,7 +109,7 @@ app.use(passportConfig.ensureAuthenticated);
 // });
 
 app.post('/charge', function(req, res){
-    
+    console.log('Charge request working');
     var stripe = require("stripe")("sk_test_gAH4qjl2YIK1yAN5zBywEN67");
     
     console.log(req);
