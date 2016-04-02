@@ -27,13 +27,13 @@ registryControllers.controller('registryCtrl', ['$scope', '$rootScope', '$http',
     $http.get('/api/product').success(function(data) {
         $scope.gifts = data;
         //console.log(data)
-
-        // angular.forEach($scope.gifts, function(response){
-        //     $scope.priceInCents = response.price * 100;
-        //    console.log($scope.priceInCents);
-        // });
+        
     });
-    
+
+      angular.forEach($scope.gifts, function(response){
+          $scope.priceInCents = response.price * 100;
+         console.log($scope.priceInCents);
+      });
       
 
     $scope.delete = function(gift, index){
