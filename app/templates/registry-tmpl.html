@@ -62,35 +62,15 @@
 
             <button class="logout-button btn btn-primary btn-sm" ng-if="user.password" type="button" ng-click="delete(gift, $index)">Delete Entry</button>
 
-            <script src="https://checkout.stripe.com/checkout.js"></script>
-
-            <button id="customButton">Purchase</button>
-
-            <script>
-                var handler = StripeCheckout.configure({
-                    key: 'pk_test_1kGfCqltwJC8xEyFDaPLGxn3',
-                    image: '/img/documentation/checkout/marketplace.png',
-                    locale: 'auto',
-                    token: function(token) {
-                        // Use the token to create the charge with a server-side script.
-                        // You can access the token ID with `token.id`
-                    }
-                });
-
-                $('#customButton').on('click', function(e) {
-                    // Open Checkout with further options
-                    handler.open({
-                        name: 'Maddieandshaine',
-                        description: '2 widgets',
-                        amount: 2000
-                    });
-                    e.preventDefault();
-                });
-
-                // Close Checkout on page navigation
-                $(window).on('popstate', function() {
-                    handler.close();
-                });
-            </script>
+            <form action="/charge" method="POST">
+                <script
+                        src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                        data-key="pk_test_1kGfCqltwJC8xEyFDaPLGxn3"
+                        data-amount="{{gift.price * 100}}"
+                        data-name="{{gift.id}}"
+                        data-description="${{gift.price}}"
+                        data-image="../img/gifts/trees.png">
+                </script>
+            </form>
         </li>
     </ul>

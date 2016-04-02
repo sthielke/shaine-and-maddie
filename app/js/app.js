@@ -34,3 +34,11 @@ registryApp.config(['$routeProvider',
         redirectTo: '/home'
       });
   }]);
+
+angular
+    .module('myApp', [
+      'angular-stripe'
+    ])
+    .config(function (stripeProvider) {
+      stripeProvider.setPublishableKey('pk_test_1kGfCqltwJC8xEyFDaPLGxn3');
+    });
