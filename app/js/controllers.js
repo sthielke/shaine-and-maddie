@@ -4,7 +4,7 @@
 
 var registryControllers = angular.module('registryControllers', []);
 
-registryControllers.controller('registryCtrl', ['$scope', '$rootScope', '$http', 'stripe',
+registryControllers.controller('registryCtrl', ['$scope', '$rootScope', '$http',
   function($scope, $rootScope, $http, stripe) {
 
       $scope.charge = function () {
