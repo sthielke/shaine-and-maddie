@@ -62,15 +62,12 @@
 
             <button class="logout-button btn btn-primary btn-sm" ng-if="user.password" type="button" ng-click="delete(gift, $index)">Delete Entry</button>
 
-            <form action="/charge" method="POST">
-                <script
-                        src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-                        data-key="pk_test_1kGfCqltwJC8xEyFDaPLGxn3"
-                        data-amount="2000"
-                        data-name="{{gift.id}}"
-                        data-description="${{gift.price}}"
-                        data-image="../img/gifts/trees.png">
-                </script>
+            <form stripe-form="stripeCallback" name="checkoutForm">
+                <input ng-model="number" placeholder="Card Number" payments-format="card" payments-validate="card" name="card" />
+                <input ng-model="expiry" placeholder="Expiration" payments-format="expiry" payments-validate="expiry" name="expiry" />
+                <input ng-model="cvc" placeholder="CVC" payments-format="cvc" payments-validate="cvc" name="cvc" />
+                <button type="submit">Submit</button>
+                <div ng-if="checkoutForm.card.$invalid"> Error: invalid card number! </div>
             </form>
         </li>
     </ul>
