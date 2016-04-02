@@ -110,7 +110,7 @@ app.use(passportConfig.ensureAuthenticated);
 //    
 // });
 
-app.post('/charge', function(req, res) {
+
     var stripeToken = req.body.stripeToken;
 
     var charge = stripe.charges.create({
@@ -125,7 +125,7 @@ app.post('/charge', function(req, res) {
             res.send(charge);
         }
     });
-});
+
 
 //======= Set up server =======//
 

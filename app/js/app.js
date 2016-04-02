@@ -22,7 +22,7 @@ registryApp.config(['$routeProvider',
         templateUrl: 'templates/event-details-tmpl.html',
         controller: 'eventDetailsCtrl'
       }).
-      when('/registry' || '/auth/login',{
+      when('/registry' || 'auth/login',{
         templateUrl: 'templates/registry-tmpl.html',
         controller: 'registryCtrl'
       }).
