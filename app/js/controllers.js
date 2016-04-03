@@ -14,7 +14,7 @@ registryControllers.controller('registryCtrl', ['$scope', '$rootScope', '$http',
                   var payment = angular.copy($scope.payment);
                   payment.card = void 0;
                   payment.token = response.id;
-                  return $http.post('https://yourserver.com/payments', payment);
+                  return $http.post('https://maddieandshaine.com/payments', payment);
               })
               .then(function (payment) {
                   console.log('successfully submitted payment for $', payment.amount);
