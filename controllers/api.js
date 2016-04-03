@@ -1,4 +1,4 @@
-var Product = require('../models/product')
+var Product = require('../models/product');
 
 var apiController = {
     post: function(req, res){
@@ -37,7 +37,7 @@ var apiController = {
         else{
             Product.update({_id: req.params.id}, {$set: {name: req.body.name, price: req.body.price}}, function(err, response){
             });
-        }
+        }{}
 
         Product.find(function(err, response){
             res.send(response)

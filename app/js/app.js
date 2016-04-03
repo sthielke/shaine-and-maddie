@@ -35,12 +35,3 @@ registryApp.config(['$routeProvider',
       });
   }]);
 
-angular
-    .module('myApp', [
-      'angular-stripe', 
-      'credit-cards',
-      'registryControllers'
-    ])
-    .config(function (stripeProvider) {
-      stripeProvider.setPublishableKey('pk_test_1kGfCqltwJC8xEyFDaPLGxn3');
-    });

@@ -5,29 +5,8 @@
 var registryControllers = angular.module('registryControllers', []);
 
 registryControllers.controller('registryCtrl', ['$scope', '$rootScope', '$http',
-  function($scope, $rootScope, $http, stripe) {
-
-      $scope.charge = function () {
-          return stripe.card.createToken($scope.payment.card)
-              .then(function (response) {
-                  console.log('token created for card ending in ', response.card.last4);
-                  var payment = angular.copy($scope.payment);
-                  payment.card = void 0;
-                  payment.token = response.id;
-                  return $http.post('https://maddieandshaine.com/payments', payment);
-              })
-              .then(function (payment) {
-                  console.log('successfully submitted payment for $', payment.amount);
-              })
-              .catch(function (err) {
-                  if (err.type && /^Stripe/.test(err.type)) {
-                      console.log('Stripe error: ', err.message);
-                  }
-                  else {
-                      console.log('Other error occurred, possibly with your API', err.message);
-                  }
-              });
-      };
+  function($scope, $rootScope, $http) {
+      
       
     $http.get('/userinfo')
         .then(function(response){
@@ -46,6 +25,13 @@ registryControllers.controller('registryCtrl', ['$scope', '$rootScope', '$http',
           });
       $scope.product = {}
     };
+      
+      $scope.charge = function(){
+          $http.post('/charge', $scope.gifts)
+              .then(function(response){
+                  console.log(response);
+              })
+      };
 
     $http.get('/api/product').success(function(data) {
         $scope.gifts = data;
@@ -81,6 +67,8 @@ registryControllers.controller('registryCtrl', ['$scope', '$rootScope', '$http',
                 $scope.user = response.data
             })
     };
+      
+      
 
     $scope.orderProp = 'id';
   }]);

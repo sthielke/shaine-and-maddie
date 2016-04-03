@@ -40,9 +40,10 @@ var app = express();
 
 mongoose.connect('mongodb://localhost/registry');
 
-//======== requiring api contrtoller ========//
+//======== requiring contrtollers ========//
 var authenticationController = require('./controllers/authentication.js');
 var apiController = require('./controllers/api.js');
+var chargeController = require('./controllers/charge.js');
 
 //========= Express config, look at documentation =========//
 app.use(bodyParser.json());
@@ -88,6 +89,8 @@ app.delete('/api/product/:id', apiController.delete);
 
 app.use(passportConfig.ensureAuthenticated);
 
+app.post('/charge', chargeController.post);
+
 // app.post('/api/confirm', function(req, res){
 //    
 //     console.log('some string');
@@ -110,26 +113,6 @@ app.use(passportConfig.ensureAuthenticated);
 //    
 // });
 
-app.post('/charge', function(req, res){
-    console.log('Charge request working');
-    console.log(req);
-    console.log(res);
-
-
-    var stripeToken = req.body.stripeToken;
-
-    var charge = stripe.charges.create({
-        amount: 2000, // amount in cents
-        currency: "usd",
-        source: stripeToken,
-        description: "Example charge"
-    }, function(err, charge) {
-        if (err && err.type === 'StripeCardError') {
-            // The card has been declined
-        }
-        res.send("completed payment!");
-    });
-});
 
 
 

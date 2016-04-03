@@ -52,26 +52,26 @@
         <input type="submit">
     </form>
 
-    <!--Body content-->
+    Body content
 
-    <!--<ul class="gifts container-fluid">-->
-        <!--<li ng-repeat="gift in gifts" class="thumbnail" id="giftContainer">-->
-            <!--<img class="thumb" ng-src="{{gift.imageUrl}}">-->
-            <!--<h3>{{gift.id}}</a> ${{gift.price}}</h3>-->
-            <!--<p>{{gift.description}}</p>-->
+    <ul class="gifts container-fluid">
+        <li ng-repeat="gift in gifts" class="thumbnail" id="giftContainer">
+            <img class="thumb" ng-src="{{gift.imageUrl}}">
+            <h3>{{gift.id}}</a> ${{gift.price}}</h3>
+            <p>{{gift.description}}</p>
 
-            <!--<button class="logout-button btn btn-primary btn-sm" ng-if="user.password" type="button" ng-click="delete(gift, $index)">Delete Entry</button>-->
+            <button class="logout-button btn btn-primary btn-sm" ng-if="user.password" type="button" ng-click="delete(gift, $index)">Delete Entry</button>
 
-            <!--<form action="/charge" method="POST"">-->
-                <!--<script-->
-                        <!--src="https://checkout.stripe.com/checkout.js" class="stripe-button"-->
-                        <!--data-key="pk_test_1kGfCqltwJC8xEyFDaPLGxn3"-->
-                        <!--data-amount="{{gift.price * 100}}"-->
-                        <!--data-name="{{gift.id}}"-->
-                        <!--data-description="${{gift.price}}"-->
-                        <!--data-image="../img/gifts/trees.png">-->
-                <!--</script>-->
-            <!--</form>-->
+            <form action="/charge" method="POST" ng-submit="charge()">
+                <script
+                        src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                        data-key="pk_test_1kGfCqltwJC8xEyFDaPLGxn3"
+                        data-amount="{{gift.price * 100}}"
+                        data-name="{{gift.id}}"
+                        data-description="${{gift.price}}"
+                        data-image="../img/gifts/trees.png">
+                </script>
+            </form>
         </li>
     </ul>
 
