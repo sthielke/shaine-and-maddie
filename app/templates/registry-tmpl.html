@@ -52,7 +52,7 @@
         <input type="submit">
     </form>
 
-    Body content
+    <!--Body content-->
 
     <ul class="gifts container-fluid">
         <li ng-repeat="gift in gifts" class="thumbnail" id="giftContainer">
@@ -64,12 +64,19 @@
 
             <form action="/charge" method="POST" ng-submit="charge()">
                 <script
+
                         src="https://checkout.stripe.com/checkout.js" class="stripe-button"
                         data-key="pk_test_1kGfCqltwJC8xEyFDaPLGxn3"
                         data-amount="{{gift.price * 100}}"
                         data-name="{{gift.id}}"
                         data-description="${{gift.price}}"
                         data-image="../img/gifts/trees.png">
+
+                    $http.post('/charge', $scope.gifts)
+                            .then(function(response){
+                                console.log(response)
+                            })
+
                 </script>
             </form>
         </li>
