@@ -32,6 +32,7 @@
   "dependencies": {
     "angular": "^1.5.3",
     "angular-credit-cards": "^2.4.3",
+    "angular-payments": "^1.0.7",
     "angular-stripe": "^4.2.12",
     "bcryptjs": "^2.3.0",
     "body-parser": "^1.15.0",

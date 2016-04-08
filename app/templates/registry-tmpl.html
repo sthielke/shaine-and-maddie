@@ -54,53 +54,53 @@
 
     <!--Body content-->
 
-    <ul class="gifts container-fluid">
-        <li ng-repeat="gift in gifts" class="thumbnail" id="giftContainer">
-            <img class="thumb" ng-src="{{gift.imageUrl}}">
-            <h3>{{gift.id}}</a> ${{gift.price}}</h3>
-            <p>{{gift.description}}</p>
+    <!--<ul class="gifts container-fluid">-->
+        <!--<li ng-repeat="gift in gifts" class="thumbnail" id="giftContainer">-->
+            <!--<img class="thumb" ng-src="{{gift.imageUrl}}">-->
+            <!--<h3>{{gift.id}}</a> ${{gift.price}}</h3>-->
+            <!--<p>{{gift.description}}</p>-->
 
-            <button class="btn btn-info" id="purchase" type="button" ng-click="purchase()">Purchase</button>
+            <!--<button class="btn btn-info" id="purchase" type="button" ng-click="purchase()">Purchase</button>-->
 
 
-            <button class="logout-button btn btn-primary btn-sm" ng-if="user.password" type="button" ng-click="delete(gift, $index)">Delete Entry</button>
+            <!--<button class="logout-button btn btn-primary btn-sm" ng-if="user.password" type="button" ng-click="delete(gift, $index)">Delete Entry</button>-->
 
-            <!--<script src="https://checkout.stripe.com/checkout.js"></script>-->
+            <!--&lt;!&ndash;<script src="https://checkout.stripe.com/checkout.js"></script>&ndash;&gt;-->
 
-            <!--<button id="customButton">Purchase</button>-->
+            <!--&lt;!&ndash;<button id="customButton">Purchase</button>&ndash;&gt;-->
 
-            <!--<script>-->
-                <!--var handler = StripeCheckout.configure({-->
-                    <!--key: 'pk_test_1kGfCqltwJC8xEyFDaPLGxn3',-->
-                    <!--image: '/img/documentation/checkout/marketplace.png',-->
-                    <!--locale: 'auto',-->
-                    <!--token: function(token) {-->
-                        <!--// Use the token to create the charge with a server-side script.-->
-                        <!--// You can access the token ID with `token.id`-->
-                    <!--}-->
-                <!--});-->
+            <!--&lt;!&ndash;<script>&ndash;&gt;-->
+                <!--&lt;!&ndash;var handler = StripeCheckout.configure({&ndash;&gt;-->
+                    <!--&lt;!&ndash;key: 'pk_test_1kGfCqltwJC8xEyFDaPLGxn3',&ndash;&gt;-->
+                    <!--&lt;!&ndash;image: '/img/documentation/checkout/marketplace.png',&ndash;&gt;-->
+                    <!--&lt;!&ndash;locale: 'auto',&ndash;&gt;-->
+                    <!--&lt;!&ndash;token: function(token) {&ndash;&gt;-->
+                        <!--&lt;!&ndash;// Use the token to create the charge with a server-side script.&ndash;&gt;-->
+                        <!--&lt;!&ndash;// You can access the token ID with `token.id`&ndash;&gt;-->
+                    <!--&lt;!&ndash;}&ndash;&gt;-->
+                <!--&lt;!&ndash;});&ndash;&gt;-->
 
-                <!--$('#customButton').on('click', function(e) {-->
-                    <!--// Open Checkout with further options-->
-                    <!--handler.open({-->
-                        <!--name: 'Maddieandshaine',-->
-                        <!--description: '2 widgets',-->
-                        <!--amount: 2000-->
-                    <!--});-->
-                    <!--e.preventDefault();-->
-                <!--});-->
+                <!--&lt;!&ndash;$('#customButton').on('click', function(e) {&ndash;&gt;-->
+                    <!--&lt;!&ndash;// Open Checkout with further options&ndash;&gt;-->
+                    <!--&lt;!&ndash;handler.open({&ndash;&gt;-->
+                        <!--&lt;!&ndash;name: 'Maddieandshaine',&ndash;&gt;-->
+                        <!--&lt;!&ndash;description: '2 widgets',&ndash;&gt;-->
+                        <!--&lt;!&ndash;amount: 2000&ndash;&gt;-->
+                    <!--&lt;!&ndash;});&ndash;&gt;-->
+                    <!--&lt;!&ndash;e.preventDefault();&ndash;&gt;-->
+                <!--&lt;!&ndash;});&ndash;&gt;-->
 
-                <!--// Close Checkout on page navigation-->
-                <!--$(window).on('popstate', function() {-->
-                    <!--handler.close();-->
-                <!--});-->
-            <!--</script>-->
-        </li>
-    </ul>
+                <!--&lt;!&ndash;// Close Checkout on page navigation&ndash;&gt;-->
+                <!--&lt;!&ndash;$(window).on('popstate', function() {&ndash;&gt;-->
+                    <!--&lt;!&ndash;handler.close();&ndash;&gt;-->
+                <!--&lt;!&ndash;});&ndash;&gt;-->
+            <!--&lt;!&ndash;</script>&ndash;&gt;-->
+        <!--</li>-->
+    <!--</ul>-->
 
-<!--<input type="text" ng-model="card.number" cc-number cc-type="cardType" placeholder="Credit Card" />-->
-<!--<input type="text" ng-model="card.cvc" cc-cvc placeholder="CVC"/>-->
-<!--<div cc-exp>-->
-    <!--<input ng-model="card.exp_month" cc-exp-month placeholder="Exp. month" />-->
-    <!--<input ng-model="card.exp_year" cc-exp-year placeholder="Exp. year" />-->
-<!--</div>-->
+<!--&lt;!&ndash;<input type="text" ng-model="card.number" cc-number cc-type="cardType" placeholder="Credit Card" />&ndash;&gt;-->
+<!--&lt;!&ndash;<input type="text" ng-model="card.cvc" cc-cvc placeholder="CVC"/>&ndash;&gt;-->
+<!--&lt;!&ndash;<div cc-exp>&ndash;&gt;-->
+    <!--&lt;!&ndash;<input ng-model="card.exp_month" cc-exp-month placeholder="Exp. month" />&ndash;&gt;-->
+    <!--&lt;!&ndash;<input ng-model="card.exp_year" cc-exp-year placeholder="Exp. year" />&ndash;&gt;-->
+<!--&lt;!&ndash;</div>&ndash;&gt;-->
