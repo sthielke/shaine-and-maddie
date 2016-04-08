@@ -6,9 +6,12 @@ var registryControllers = angular.module('registryControllers', []);
 
 registryControllers.controller('registryCtrl', ['$scope', '$rootScope', '$http',
   function($scope, $rootScope, $http) {
-      
-      
-    $http.get('/userinfo')
+
+      $scope.showCC = false;
+
+
+
+      $http.get('/userinfo')
         .then(function(response){
             $scope.user = response.data;
         });
@@ -26,12 +29,14 @@ registryControllers.controller('registryCtrl', ['$scope', '$rootScope', '$http',
       $scope.product = {}
     };
       
-      $scope.charge = function(){
-          $http.post('/charge', $scope.gifts)
-              .then(function(response){
-                  console.log(response);
-              })
-      };
+      
+      
+      // $scope.charge = function(){
+      //     $http.post('/charge', $scope.gifts)
+      //         .then(function(response){
+      //             console.log(response);
+      //         })
+      // };
 
     $http.get('/api/product').success(function(data) {
         $scope.gifts = data;
@@ -39,10 +44,10 @@ registryControllers.controller('registryCtrl', ['$scope', '$rootScope', '$http',
         
     });
 
-      angular.forEach($scope.gifts, function(response){
-          $scope.priceInCents = response.price * 100;
-         console.log($scope.priceInCents);
-      });
+      // angular.forEach($scope.gifts, function(response){
+      //     $scope.priceInCents = response.price * 100;
+      //    console.log($scope.priceInCents);
+      // });
       
 
     $scope.delete = function(gift, index){
@@ -67,6 +72,11 @@ registryControllers.controller('registryCtrl', ['$scope', '$rootScope', '$http',
                 $scope.user = response.data
             })
     };
+      
+      $scope.purchase = function(){
+        $scope.showCC = true;  
+          console.log("Show CC");
+      };
       
       
 
