@@ -60,7 +60,7 @@
             <h3>{{gift.id}}</a> ${{gift.price}}</h3>
             <p>{{gift.description}}</p>
 
-            <button class="button btn-default" id="purchase" type="button" ng-click="pay()">Purchase</button>
+            <button class="button btn-default" id="purchase" ng-click="purchase()">Purchase</button>
 
 
             <button class="logout-button btn btn-primary btn-sm" ng-if="user.password" type="button" ng-click="delete(gift, $index)">Delete Entry</button>
