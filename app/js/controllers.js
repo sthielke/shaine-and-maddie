@@ -2,9 +2,11 @@
 
 /* Controllers */
 
-Stripe.setPublishableKey('pk_test_1kGfCqltwJC8xEyFDaPLGxn3');
 
-var registryControllers = angular.module('registryControllers', []);
+
+var registryControllers = angular.module('registryControllers', ['angularPayments']);
+
+Stripe.setPublishableKey('pk_test_1kGfCqltwJC8xEyFDaPLGxn3');
 
 registryControllers.controller('registryCtrl', ['$scope', '$rootScope', '$http',
   function($scope, $rootScope, $http) {
