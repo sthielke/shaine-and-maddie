@@ -4,10 +4,10 @@
 
 
 
-var registryControllers = angular.module('registryControllers', ['angular-payments']);
+var registryControllers = angular.module('registryControllers', []);
 
 
-registryControllers.controller('registryCtrl', ['$scope', '$rootScope', '$http', 
+registryControllers.controller('registryCtrl', ['$scope', '$rootScope', '$http', 'angular-payments',
   function($scope, $rootScope, $http) {
 
       
