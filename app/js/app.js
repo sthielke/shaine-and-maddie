@@ -3,11 +3,12 @@
 /* App Module */
 
 var registryApp = angular.module('registryApp', [
+  'angularPayments',
   'ngRoute',
   'registryControllers'
 ]);
 
-registryApp.config(['$routeProvider', 'angularPayments',
+registryApp.config(['$routeProvider', 
   function($routeProvider) {
     $routeProvider.
       when('/home', {
