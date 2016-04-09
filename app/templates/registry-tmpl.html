@@ -63,51 +63,53 @@
 
             <button class="logout-button btn btn-primary btn-sm" ng-if="user.password" type="button" ng-click="delete(gift, $index)">Delete Entry</button>
 
-            <form stripe-form="handleStripe" name="myForm" >
+            <!--<form stripe-form="handleStripe" name="myForm" >-->
 
-                <div class="span3">
-                    <label for="">Card number</label>
-                    <input type="text" class="input-block-level" ng-model="number" name="number"
-                           payments-validate="card" payments-format="card" payments-type-model="type"
-                           payments-length="card" ng-class="type"/>
-                </div>
+                <!--<div class="span3">-->
+                    <!--<label for="">Card number</label>-->
+                    <!--<input type="text" class="input-block-level" ng-model="number" name="number"-->
+                           <!--payments-validate="card" payments-format="card" payments-type-model="type"-->
+                           <!--payments-length="card" ng-class="type"/>-->
+                <!--</div>-->
 
-                <div class="span1">
-                    <label for="">Expiry</label>
-                    <input type="text" class="input-block-level" ng-model="expiry" name="expiry"
-                           payments-validate="expiry" payments-format="expiry" />
-                </div>
+                <!--<div class="span1">-->
+                    <!--<label for="">Expiry</label>-->
+                    <!--<input type="text" class="input-block-level" ng-model="expiry" name="expiry"-->
+                           <!--payments-validate="expiry" payments-format="expiry" />-->
+                <!--</div>-->
 
-                <div class="span3">
-                    <label for="">Name on card </label>
-                    <input type="text" class="input-block-level">
-                </div>
+                <!--<div class="span3">-->
+                    <!--<label for="">Name on card </label>-->
+                    <!--<input type="text" class="input-block-level">-->
+                <!--</div>-->
 
-                <div class="span1">
-                    <label for="">CVC</label>
-                    <input type="text" class="input-block-level" ng-model="cvc" name="cvc"
-                           payments-validate="cvc" payments-format="cvc" payments-type-model="type"/>
-                </div>
+                <!--<div class="span1">-->
+                    <!--<label for="">CVC</label>-->
+                    <!--<input type="text" class="input-block-level" ng-model="cvc" name="cvc"-->
+                           <!--payments-validate="cvc" payments-format="cvc" payments-type-model="type"/>-->
+                <!--</div>-->
 
-                <div class="span4">
-                    <button type="submit" class="btn btn-primary btn-large">Submit</button>
-                </div>
-            </form>
-
-
-            <!--<form action="charge()" method="POST" ng-submit="charge()">-->
-                <!--<script-->
-
-                        <!--src="https://checkout.stripe.com/checkout.js" class="stripe-button"-->
-                        <!--data-key="pk_test_1kGfCqltwJC8xEyFDaPLGxn3"-->
-                        <!--data-amount="{{gift.price * 100}}"-->
-                        <!--data-name="{{gift.id}}"-->
-                        <!--data-description="${{gift.price}}"-->
-                        <!--data-image="../img/gifts/trees.png">-->
-                <!--</script>-->
+                <!--<div class="span4">-->
+                    <!--<button type="submit" class="btn btn-primary btn-large">Submit</button>-->
+                <!--</div>-->
             <!--</form>-->
+
+
+
         </li>
     </ul>
+
+<!--<form action="charge()" method="POST" ng-submit="charge()">-->
+<!--<script-->
+
+<!--src="https://checkout.stripe.com/checkout.js" class="stripe-button"-->
+<!--data-key="pk_test_1kGfCqltwJC8xEyFDaPLGxn3"-->
+<!--data-amount="{{gift.price * 100}}"-->
+<!--data-name="{{gift.id}}"-->
+<!--data-description="${{gift.price}}"-->
+<!--data-image="../img/gifts/trees.png">-->
+<!--</script>-->
+<!--</form>-->
 
 <!--<input type="text" ng-model="card.number" cc-number cc-type="cardType" placeholder="Credit Card" />-->
 <!--<input type="text" ng-model="card.cvc" cc-cvc placeholder="CVC"/>-->
