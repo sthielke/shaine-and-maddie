@@ -3,7 +3,6 @@
 /* App Module */
 
 var registryApp = angular.module('registryApp', [
-  'angular-payments',
   'ngRoute',
   'registryControllers'
 ]);
