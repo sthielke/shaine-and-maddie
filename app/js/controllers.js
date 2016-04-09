@@ -4,7 +4,7 @@
 
 
 
-var registryControllers = angular.module('registryControllers', ['angularPayments']);
+var registryControllers = angular.module('registryControllers', []);
 
 Stripe.setPublishableKey('pk_test_1kGfCqltwJC8xEyFDaPLGxn3');
 
