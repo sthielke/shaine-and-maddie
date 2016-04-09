@@ -5,7 +5,7 @@
 
 var registryControllers = angular.module('registryControllers', []);
 
-registryControllers.controller('registryCtrl', ['$scope', '$rootScope', '$http',
+registryControllers.controller('registryCtrl', ['$scope', '$rootScope', '$http', 'angularPayments',
   function($scope, $rootScope, $http) {
       
       $scope.showCC = false;
