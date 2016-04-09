@@ -43,7 +43,7 @@ mongoose.connect('mongodb://localhost/registry');
 //======== requiring contrtollers ========//
 var authenticationController = require('./controllers/authentication.js');
 var apiController = require('./controllers/api.js');
-var chargeController = require('./controllers/charge.js');
+
 
 //========= Express config, look at documentation =========//
 app.use(bodyParser.json());
@@ -89,7 +89,7 @@ app.delete('/api/product/:id', apiController.delete);
 
 app.use(passportConfig.ensureAuthenticated);
 
-app.post('/charge', chargeController.post);
+// app.post('/charge', chargeController.post);
 
 // app.post('/api/confirm', function(req, res){
 //    
