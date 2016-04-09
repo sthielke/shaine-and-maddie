@@ -7,7 +7,7 @@
 var registryControllers = angular.module('registryControllers', []);
 
 
-registryControllers.controller('registryCtrl', ['$scope', '$rootScope', '$http',
+registryControllers.controller('registryCtrl', ['$scope', '$rootScope', '$http', 
   function($scope, $rootScope, $http) {
 
       

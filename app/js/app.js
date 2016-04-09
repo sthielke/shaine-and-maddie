@@ -4,7 +4,8 @@
 
 var registryApp = angular.module('registryApp', [
   'ngRoute',
-  'registryControllers'
+  'registryControllers',
+  'angularPayments'
 ]);
 
 registryApp.config(['$routeProvider',
