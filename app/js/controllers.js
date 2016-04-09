@@ -2,13 +2,13 @@
 
 /* Controllers */
 
+Stripe.setPublishableKey('pk_test_1kGfCqltwJC8xEyFDaPLGxn3');
 
 var registryControllers = angular.module('registryControllers', []);
 
 registryControllers.controller('registryCtrl', ['$scope', '$rootScope', '$http',
   function($scope, $rootScope, $http) {
 
-      Stripe.setPublishableKey('pk_test_1kGfCqltwJC8xEyFDaPLGxn3');
       
       $scope.showCC = false;
 
