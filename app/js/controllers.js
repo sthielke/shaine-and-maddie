@@ -2,11 +2,36 @@
 
 /* Controllers */
 
-var registryControllers = angular.module('registryControllers', []);
+Stripe.setPublishableKey('pk_test_1kGfCqltwJC8xEyFDaPLGxn3');
+
+var registryControllers = angular.module('registryControllers', ['angularPayments']);
 
 registryControllers.controller('registryCtrl', ['$scope', '$rootScope', '$http',
   function($scope, $rootScope, $http) {
 
+
+      $scope.handleStripe = function(status, response){
+          if(response.error) {
+              // there was an error. Fix it.
+          } else {
+
+              var stripe = require("stripe")("sk_test_gAH4qjl2YIK1yAN5zBywEN67");
+
+              // got stripe token, now charge it or smt
+              var token = response.id;
+
+              console.log(token);
+              stripe.charges.create({
+                  amount: 1000, // amount in cents, again
+                  currency: "usd",
+                  source: token,
+                  description: "Example charge",
+                  metadata: {'order_id': '6735'}
+              });
+          }
+      }
+  };
+    
       $scope.showCC = false;
 
 
