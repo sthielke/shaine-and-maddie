@@ -6,9 +6,10 @@
 
 var registryControllers = angular.module('registryControllers', []);
 
+Stripe.setPublishableKey('pk_test_1kGfCqltwJC8xEyFDaPLGxn3');
 
-registryControllers.controller('registryCtrl', ['$scope', '$rootScope', '$http', 
-  function($scope, $rootScope, $http) {
+registryControllers.controller('registryCtrl', ['$scope', '$rootScope', '$http', 'angularPayments',
+  function($scope, $rootScope, $http, $modal) {
 
       
       $scope.showCC = false;
@@ -78,9 +79,17 @@ registryControllers.controller('registryCtrl', ['$scope', '$rootScope', '$http',
     };
       
       $scope.purchase = function(){
-        $scope.showCC = true;  
-          console.log("Show CC");
+          $modal.open({
+              templateUrl: 'checkout.html',
+              controller: 'CheckoutCtrl',
+              resolve: {
+                  totalAmount: $scope.gifts.price;
+              }
+          });
+
       };
+
+
 
       $scope.handleStripe = function (status, response) {
           if (response.error){
@@ -103,7 +112,7 @@ registryControllers.controller('eventDetailsCtrl', ['$scope', '$routeParams',
 
 registryControllers.controller('homeCtrl', ['$scope', 
   function($scope){
-  	$scope.map = data;
+  	
 }]);
 
 registryControllers.controller('contactUsCtrl', ['$scope', 
@@ -142,3 +151,8 @@ registryControllers.controller('loginController', ['$scope', '$http', '$location
                 })
         }
 }]);
+
+registryControllers.controller('CheckoutCtrl', ['$scope',
+    function($scope){
+        $scope.lodge = data;
+    }]);
