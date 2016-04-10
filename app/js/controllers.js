@@ -83,10 +83,9 @@ registryControllers.controller('registryCtrl', ['$scope', '$rootScope', '$http',
               templateUrl: 'checkout.html',
               controller: 'CheckoutCtrl',
               resolve: {
-                  totalAmount: $scope.gifts.price;
+                  totalAmount: $scope.gifts.price
               }
           });
-
       };
 
 
