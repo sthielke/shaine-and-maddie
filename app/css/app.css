@@ -17,6 +17,11 @@ body {
 
 #description{
     width: 60%;
+    font-family: "Brush Script MT", cursive;
+}
+
+#details {
+    font-family: "Brush Script MT", cursive;
 }
 
 
